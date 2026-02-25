@@ -1,0 +1,6 @@
+env/
+tests/
+__pycache__/
+.csv
+.xlsx
+.log
