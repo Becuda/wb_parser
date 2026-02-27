@@ -32,6 +32,7 @@ def run_parsing():
         main_window=driver.current_window_handle
         wb_catalog.search_by_text(driver,wb_settings.SEARCH_TEXT)
 
+        time.sleep(3)
         for link in wb_catalog.scroll_products(driver):
 
             if count >= limit:
