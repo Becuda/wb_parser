@@ -33,11 +33,10 @@ def csv_data_filter(input_file,output_file):
     
     df[PD.RATING] = df[PD.RATING].astype(float)
     df[PD.PRICE] = df[PD.PRICE].astype(float)
-   
+    df[PD.PRICE] = df[PD.PRICE].astype(float)
+
     filter_by_rating=df[(df[PD.RATING]>=RAITING_LIMIT)]
-    print(filter_by_rating[PD.RATING])
     filter_by_price=filter_by_rating[(filter_by_rating[PD.PRICE]<PRICE_LIMIT)]
-    print(filter_by_rating[PD.PRICE])
     filter_by_country=filter_by_price[filter_by_price[PD.ATTRIBUTES].apply(lambda x: country_filter(x, COUNTRY_FILTER))]
 
     if not filter_by_country.empty:
